@@ -14,7 +14,7 @@ struct ContentView: View {
             VStack {
                 CityTextView(cityName: "Oklahoma City, OK")
                 
-               MainWeatherView(imageName: "cloud.sun.fill")
+               MainWeatherView(imageName: "cloud.sun.fill", temp: 98)
                 
                 HStack(spacing: 15){
                     WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temp: 78)
@@ -102,6 +102,7 @@ struct CityTextView: View {
 struct MainWeatherView: View {
     
     var imageName: String
+    var temp: Int
     
     var body: some View {
         VStack(spacing: 7){
@@ -111,7 +112,7 @@ struct MainWeatherView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 180, height:180)
             
-            Text("98°")
+            Text("\(temp)°")
                 .font(.system(size: 64, weight: .medium))
                 .foregroundColor(.white)
         }
