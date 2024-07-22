@@ -32,83 +32,16 @@ struct ContentView: View {
                         .foregroundColor(.white)
                     
                 }
+                Spacer()
                 
-                HStack{
-                    VStack{
-                        Text("TUE")
-                            .font(.system(size: 16, weight: .medium, design: .default))
-                            .foregroundColor(.white)
-                       
-                        Image(systemName: "cloud.sun.fill")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                        
-                        Text("98°")
-                            .font(.system(size: 28, weight: .medium))
-                            .foregroundColor(.white)
-                    }
-                    VStack{
-                        Text("WED")
-                            .font(.system(size: 16, weight: .medium, design: .default))
-                            .foregroundColor(.white)
-                        
-                        Image(systemName: "cloud.sun.fill")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                        
-                        Text("98°")
-                            .font(.system(size: 28, weight: .medium))
-                            .foregroundColor(.white)
-                    }
-                    VStack{
-                        Text("THUR")
-                            .font(.system(size: 16, weight: .medium, design: .default))
-                            .foregroundColor(.white)
-                       
-                        Image(systemName: "cloud.sun.fill")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                        
-                        Text("98°")
-                            .font(.system(size: 28, weight: .medium))
-                            .foregroundColor(.white)
-                    }
-                    VStack{
-                        Text("FRI")
-                            .font(.system(size: 16, weight: .medium, design: .default))
-                            .foregroundColor(.white)
-                       
-                        Image(systemName: "cloud.sun.fill")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                        
-                        Text("98°")
-                            .font(.system(size: 28, weight: .medium))
-                            .foregroundColor(.white)
-                    }
-                    VStack{
-                        Text("SAT")
-                            .font(.system(size: 16, weight: .medium, design: .default))
-                            .foregroundColor(.white)
-                       
-                        Image(systemName: "cloud.sun.fill")
-                            .renderingMode(.original)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
-                        
-                        Text("98°")
-                            .font(.system(size: 28, weight: .medium))
-                            .foregroundColor(.white)
-                    }
+                HStack(spacing: 15){
+                    WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temp: 78)
+                    WeatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temp: 104)
+                    WeatherDayView(dayOfWeek: "THUR", imageName: "sun.rain.fill", temp: 55)
+                    WeatherDayView(dayOfWeek: "FRI", imageName: "sun.rain.fill", temp: 57)
+                    WeatherDayView(dayOfWeek: "SAT", imageName: "sunset.fill", temp: 78)
+                    WeatherDayView(dayOfWeek: "SUN", imageName: "cloud.sun.bolt.fill", temp: 23)
+            
                 }
                     
                     Spacer()
@@ -119,4 +52,29 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+}
+
+struct WeatherDayView: View {
+    
+    var dayOfWeek: String
+    var imageName: String
+    var temp: Int
+    
+    var body: some View {
+        VStack{
+            Text(dayOfWeek)
+                .font(.system(size: 16, weight: .medium, design: .default))
+                .foregroundColor(.white)
+            
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+            
+            Text("\(temp)° ")
+                .font(.system(size: 25, weight: .medium))
+                .foregroundColor(.white)
+        }
+    }
 }
