@@ -31,11 +31,7 @@ struct ContentView: View {
                 Button{
                     print("tapped")
                 }label: {
-                    Text("Changed Day Time")
-                        .frame(width: 280, height: 50)
-                        .background(.white)
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .cornerRadius(10)
+                    WeatherButton(buttonText: "Change Day time")
                 }
                 
                 Spacer()
@@ -117,5 +113,18 @@ struct MainWeatherView: View {
                 .foregroundColor(.white)
         }
         .padding(.bottom, 43)
+    }
+}
+
+struct WeatherButton: View {
+    
+    var buttonText: String
+    
+    var body: some View {
+        Text(buttonText)
+            .frame(width: 280, height: 50)
+            .background(.white)
+            .font(.system(size: 20, weight: .bold, design: .default))
+            .cornerRadius(10)
     }
 }
