@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var isNight = false
+    @State private var isNight = true
     
     
     var body: some View {
@@ -82,7 +82,7 @@ struct BackgroundView: View {
                                                    isNight ? .gray : Color("lightBlue")]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
-        .edgesIgnoringSafeArea( .all)
+        .ignoresSafeArea()
     }
 }
 
