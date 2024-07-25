@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  SwiftUi-Weather
 //
-//  Created by FartFire on 7/16/24.
+//  Created on 7/16/24.
 //
 
 import SwiftUI
