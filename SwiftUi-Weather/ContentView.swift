@@ -41,6 +41,11 @@ struct ContentView: View {
                 Spacer()
             }
         }
+//        .onAppear {
+//            let button =  WeatherButton(title: "Change Day time", textColor: isNight ? .white : .blue, backgroundColor: isNight ? .gray : .white)
+//            
+//            print(type(of: button.body))
+        }
     }
 }
 

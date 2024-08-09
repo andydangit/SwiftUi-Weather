@@ -21,4 +21,10 @@ struct WeatherButton: View {
             .font(.system(size: 20, weight: .bold, design: .default))
             .cornerRadius(10)
     }
+    
+    struct WeatherButton_Previews: PreviewProvider {
+        static var previews: some View {
+            WeatherButton(title: "test Tile", textColor: .white, backgroundColor: .blue)
+        }
+    }
 }
